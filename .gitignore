@@ -1,0 +1,9 @@
+Library
+Temp
+Obj
+.vscode/settings.json
+Logs
+AnimationDemo.sln
+*.csproj
+.svn
+.vs
