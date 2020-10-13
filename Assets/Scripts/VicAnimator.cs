@@ -40,5 +40,10 @@ public class VicAnimator : MonoBehaviour
         {
             _animator.SetTrigger("jump");
         }
+        //弹吉他
+        if (_stateInfo.shortNameHash == Animator.StringToHash("Ideal") && Input.GetKeyDown(KeyCode.G))
+        {
+            _animator.SetTrigger("guitar");
+        }
     }
 }
