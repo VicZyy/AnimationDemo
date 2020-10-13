@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class VicAnimator : MonoBehaviour
 {
     public Animator _animator;
+    public Button  _injureBtn; 
+    public Button  _normalBtn; 
     private AnimatorStateInfo _stateInfo;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _injureBtn.onClick.AddListener(()=>_animator.SetLayerWeight(2,1));
+        _normalBtn.onClick.AddListener(()=>_animator.SetLayerWeight(2,0));
     }
 
     // Update is called once per frame
@@ -44,6 +47,11 @@ public class VicAnimator : MonoBehaviour
         if (_stateInfo.shortNameHash == Animator.StringToHash("Ideal") && Input.GetKeyDown(KeyCode.G))
         {
             _animator.SetTrigger("guitar");
+        }
+        //射击
+        if (Input.GetMouseButtonDown(0))
+        {
+            _animator.SetTrigger("shoot");
         }
     }
 }
