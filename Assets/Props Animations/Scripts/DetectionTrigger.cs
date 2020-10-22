@@ -75,7 +75,10 @@ public class DetectionTrigger : MonoBehaviour
 
     public void Awake()
     {
-        if (Collider) ;
+        if (Collider) 
+        {
+            
+        }
     }
 
     void OnTriggerEnter(Collider argCollider)
