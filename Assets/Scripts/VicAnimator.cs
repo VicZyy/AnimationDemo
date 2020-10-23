@@ -32,6 +32,11 @@ public class VicAnimator : MonoBehaviour
         {
             _animator.SetBool("run", true);
         }
+        //输出动画曲线
+        if (_stateInfo.shortNameHash == Animator.StringToHash("RunForward"))
+        {
+            Debug.Log(_animator.GetFloat("RunSpeed"));
+        }
         if (Input.GetKeyUp(KeyCode.W))
         {
             _animator.SetBool("run", false);
@@ -75,34 +80,34 @@ public class VicAnimator : MonoBehaviour
                 _animator.SetLookAtPosition(_lootAtTarget.position);
             }
             //手IK
-            _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,1);
-            _animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,1);
-            if(_leftHandIKTarget)
+            _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+            _animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
+            if (_leftHandIKTarget)
             {
-                _animator.SetIKPosition(AvatarIKGoal.LeftHand,_leftHandIKTarget.position);
-                _animator.SetIKRotation(AvatarIKGoal.LeftHand,_leftHandIKTarget.rotation);
+                _animator.SetIKPosition(AvatarIKGoal.LeftHand, _leftHandIKTarget.position);
+                _animator.SetIKRotation(AvatarIKGoal.LeftHand, _leftHandIKTarget.rotation);
             }
-            _animator.SetIKPositionWeight(AvatarIKGoal.RightHand,1);
-            _animator.SetIKRotationWeight(AvatarIKGoal.RightHand,1);
-            if(_leftHandIKTarget)
+            _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+            _animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
+            if (_leftHandIKTarget)
             {
-                _animator.SetIKPosition(AvatarIKGoal.RightHand,_rightHandIkTarget.position);
-                _animator.SetIKRotation(AvatarIKGoal.RightHand,_rightHandIkTarget.rotation);
+                _animator.SetIKPosition(AvatarIKGoal.RightHand, _rightHandIkTarget.position);
+                _animator.SetIKRotation(AvatarIKGoal.RightHand, _rightHandIkTarget.rotation);
             }
             //脚IK
-            _animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot,1);
-            _animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot,1);
-            if(_leftFootIKTarget)
+            _animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
+            _animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1);
+            if (_leftFootIKTarget)
             {
-                _animator.SetIKPosition(AvatarIKGoal.LeftFoot,_leftFootIKTarget.position);
-                _animator.SetIKRotation(AvatarIKGoal.LeftFoot,_leftFootIKTarget.rotation);
+                _animator.SetIKPosition(AvatarIKGoal.LeftFoot, _leftFootIKTarget.position);
+                _animator.SetIKRotation(AvatarIKGoal.LeftFoot, _leftFootIKTarget.rotation);
             }
-            _animator.SetIKPositionWeight(AvatarIKGoal.RightFoot,1);
-            _animator.SetIKRotationWeight(AvatarIKGoal.RightFoot,1);
-            if(_rightFootIKTarget)
+            _animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
+            _animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 1);
+            if (_rightFootIKTarget)
             {
-                _animator.SetIKPosition(AvatarIKGoal.RightFoot,_rightFootIKTarget.position);
-                _animator.SetIKRotation(AvatarIKGoal.RightFoot,_rightFootIKTarget.rotation);
+                _animator.SetIKPosition(AvatarIKGoal.RightFoot, _rightFootIKTarget.position);
+                _animator.SetIKRotation(AvatarIKGoal.RightFoot, _rightFootIKTarget.rotation);
             }
         }
     }
